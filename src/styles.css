@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
  body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
     color: #f5f5f5;
-    padding: 20px;
+     font-size: 16px;
+    padding: 1.25rem;
 }
 
 #menu {
@@ -16,6 +16,11 @@
     text-align: center;
     margin-bottom: 30px;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
 }
 
 #menu a {
@@ -40,11 +45,16 @@
 
 .gallery img {
     width: 100%;
-    max-width: 400px;
+    
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    
+    max-width: 100%;
+    
+
+
 }
 
 .gallery img:hover {
@@ -75,4 +85,32 @@ a:hover {
 
 p strong {
     color: #ff9800;
+}
+
+    @media (max-width: 600px) {
+    #menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+    #menu a {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h2, h3, h4 {
+        font-size: 1.2rem;
+    }
 }
